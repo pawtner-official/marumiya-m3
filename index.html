@@ -142,6 +142,11 @@ h1{
   border:1px solid var(--rule);border-radius:3px;background:#f0eade;
 }
 @media(max-width:520px){.photos img{max-height:330px}}
+.photos figure{margin:0}
+.photos figcaption{
+  margin-top:7px;font-size:12.5px;font-weight:700;color:var(--navy);
+  letter-spacing:.06em;text-align:center;
+}
 .zoom{
   position:fixed;inset:0;z-index:100;background:rgba(28,24,18,.92);
   display:flex;align-items:center;justify-content:center;padding:16px;cursor:zoom-out;
@@ -217,7 +222,7 @@ footer{
 }
 </style>
 <script>
-window.__KAIZEN_DATA__={"meta": {"store": "丸海屋 南三条店", "updated_at": "2026-08-05", "latest_round": 2, "contact": {"team": "マーケティングクレドチーム", "members": ["村田", "小林", "濱谷", "佐藤マネージャー"], "alt": "店長"}}, "rules": [{"id": "seating-guide", "theme": "席のご案内", "summary": "個室かテーブルかを最初に聞いて、決まった優先順位でご案内する", "why": "案内するテーブルがスタッフによってバラバラだった。優先順位が決まっているほうが、新人スタッフでも迷いなくご案内できる。", "step_groups": [{"label": "まず聞くこと", "ordered": true, "steps": ["個室かテーブルか、どちらがよいかを聞く"]}, {"label": "個室の場合（人数で優先順位）", "ordered": false, "steps": ["2名 → B5 を優先", "4名 → B2〜B4", "6名 → B1", "空いていれば A1 → A2"]}, {"label": "テーブルの場合", "ordered": false, "steps": ["まずお客様に選んでいただいてOK", "C4・C5 → C1〜C3 → C6〜C8 の順で"]}], "steps": [], "photos": [], "since": "2026-08-05", "status": "確定"}, {"id": "first-approach", "theme": "ファーストアプローチ", "summary": "最初にテーブルへ行くときは、この順番で進める", "why": "スタッフごとにやり方がバラバラだった。誰が入っても同じ流れになるようにするため。", "step_groups": [{"label": "席のみ・フリーのお客様", "ordered": true, "steps": ["おしぼりと本日のおすすめ（紙）を持っていく", "単品か、飲み放題かを聞く", "ファーストドリンクを聞く", "ファーストドリンクを提供する", "「次からのご注文はモバイルオーダーからもできます」とご案内", "「本日のおすすめはこちらです」とご紹介"]}, {"label": "ご予約のお客様（これまで通り）", "ordered": true, "steps": ["お席にご案内", "コースの説明（ドリンクオプション）", "ファーストドリンクを伺う", "ファーストドリンクを提供する", "「2杯目からはモバイルオーダーもご利用いただけます」とご案内"]}], "steps": [], "photos": [], "since": "2026-08-05", "status": "確定"}, {"id": "table-setting", "theme": "卓上セッティング", "summary": "全卓このセットに統一する", "why": "以前は卓上に物が置かれているだけの状態で、情報として多すぎた。必要なものだけに間引いて、どの卓も同じ状態に揃えるため。", "steps": ["箸カゴ（緑の布を折って敷く）", "トモエ（醤油）", "爪楊枝", "紙ナプキン", "モバイルオーダーのQRスタンド", "メニュー", "取り皿・小皿"], "photos": ["2026-08-04/6984.jpeg", "2026-08-04/6985.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "washitsu-slipper", "theme": "和室のスリッパ", "summary": "座敷のお客様には、スリッパを出して脱いだ靴は棚に納める", "why": "宴会中にお手洗いなどで席を立つとき、靴を履き直さずにすぐ動けるようにするため。スリッパの方が移動が楽になる。", "steps": [], "photos": ["2026-08-04/6981.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "toilet-check", "theme": "トイレチェック", "summary": "最低2時間に1回、チェックリストの項目を確認して記入する", "why": "これまでルールが曖昧で、やったことのないスタッフもいた。時間と項目を決めることで、誰でも同じ基準でできるようにするため。", "steps": ["便器", "床", "壁", "鏡", "ハンドソープの補充", "トイレットペーパーの補充", "手拭き備品の補充", "お客様の忘れ物がないか"], "photos": ["2026-08-05/6990.jpeg"], "since": "2026-08-05", "status": "確定"}, {"id": "cleaning-supplies", "theme": "掃除用具・補充類の置き場", "summary": "掃除用具はトイレ内、補充類はレジに置く", "why": "掃除用具と補充類がトイレ内とレジ周りに混在していて分かりにくかったため、置き場を種類で分けた。", "steps": ["掃除用具 → トイレ内", "補充類（ペーパー・ハンドソープ等） → レジ"], "photos": [], "since": "2026-08-05", "status": "確定"}], "rounds": [{"round": 2, "date": "2026-08-05", "confirmed": [{"title": "トイレチェックのルール化"}, {"title": "ファーストアプローチの確定"}, {"title": "席のご案内ルール"}, {"title": "掃除用具・補充類の置き場を統一"}], "in_progress": [{"title": "トイレ清掃チェックリストの設置"}, {"title": "LINE誘導のタイミング"}, {"title": "ドリンクグラスの構成・配置の見直し"}, {"title": "新人スタッフへの教育法・マニュアル"}, {"title": "サイドワークの見直し"}]}]};
+window.__KAIZEN_DATA__={"meta": {"store": "丸海屋 南三条店", "updated_at": "2026-08-05", "latest_round": 2, "contact": {"team": "マーケティングクレドチーム", "members": ["村田", "小林", "濱谷", "佐藤マネージャー"], "alt": "店長"}}, "rules": [{"id": "seating-guide", "theme": "席のご案内", "summary": "個室かテーブルかを最初に聞いて、決まった優先順位でご案内する", "why": "案内するテーブルがスタッフによってバラバラだった。優先順位が決まっているほうが、新人スタッフでも迷いなくご案内できる。", "step_groups": [{"label": "まず聞くこと", "ordered": true, "steps": ["個室かテーブルか、どちらがよいかを聞く"]}, {"label": "個室の場合（人数で優先順位）", "ordered": false, "steps": ["2名 → B5 を優先", "4名 → B2〜B4", "6名 → B1", "空いていれば A1 → A2"]}, {"label": "テーブルの場合", "ordered": false, "steps": ["まずお客様に選んでいただいてOK", "C4・C5 → C1〜C3 → C6〜C8 の順で"]}], "steps": [], "photos": [], "since": "2026-08-05", "status": "確定"}, {"id": "first-approach", "theme": "ファーストアプローチ", "summary": "最初にテーブルへ行くときは、この順番で進める", "why": "スタッフごとにやり方がバラバラだった。誰が入っても同じ流れになるようにするため。", "step_groups": [{"label": "席のみ・フリーのお客様", "ordered": true, "steps": ["おしぼりと本日のおすすめ（紙）を持っていく", "単品か、飲み放題かを聞く", "ファーストドリンクを聞く", "ファーストドリンクを提供する", "「次からのご注文はモバイルオーダーからもできます」とご案内", "「本日のおすすめはこちらです」とご紹介"]}, {"label": "ご予約のお客様（これまで通り）", "ordered": true, "steps": ["お席にご案内", "コースの説明（ドリンクオプション）", "ファーストドリンクを伺う", "ファーストドリンクを提供する", "「2杯目からはモバイルオーダーもご利用いただけます」とご案内"]}], "steps": [], "photos": [], "since": "2026-08-05", "status": "確定"}, {"id": "table-setting", "theme": "卓上セッティング", "summary": "全卓このセットに統一する", "why": "以前は卓上に物が置かれているだけの状態で、情報として多すぎた。必要なものだけに間引いて、どの卓も同じ状態に揃えるため。", "steps": ["箸カゴ（緑の布を折って敷く）", "トモエ（醤油）", "爪楊枝", "紙ナプキン", "モバイルオーダーのQRスタンド", "メニュー", "取り皿・小皿"], "photos": ["2026-08-04/6984.jpeg", "2026-08-04/6985.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "washitsu-slipper", "theme": "和室のスリッパ", "summary": "座敷のお客様には、スリッパを出して脱いだ靴は棚に納める", "why": "宴会中にお手洗いなどで席を立つとき、靴を履き直さずにすぐ動けるようにするため。スリッパの方が移動が楽になる。", "steps": [], "photos": ["2026-08-04/6981.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "toilet-check", "theme": "トイレチェック", "summary": "最低2時間に1回、チェックリストの項目を確認して記入する", "why": "これまでルールが曖昧で、やったことのないスタッフもいた。時間と項目を決めることで、誰でも同じ基準でできるようにするため。", "steps": ["便器", "床", "壁", "鏡", "ハンドソープの補充", "トイレットペーパーの補充", "手拭き備品の補充", "お客様の忘れ物がないか"], "photos": ["2026-08-05/6990.jpeg"], "since": "2026-08-05", "status": "確定"}, {"id": "cleaning-supplies", "theme": "掃除用具・補充類の置き場", "summary": "掃除用具はトイレ内、補充類はレジに置く", "why": "掃除用具と補充類がトイレ内とレジ周りに混在していて分かりにくかったため、置き場を種類で分けた。", "steps": ["掃除用具 → トイレ内", "補充類（ペーパー・ハンドソープ等） → レジ"], "photos": [{"file": "2026-08-05/0155.jpeg", "caption": "整理前"}, {"file": "2026-08-05/0157.jpeg", "caption": "整理後"}], "since": "2026-08-05", "status": "確定"}], "rounds": [{"round": 2, "date": "2026-08-05", "confirmed": [{"title": "トイレチェックのルール化"}, {"title": "ファーストアプローチの確定"}, {"title": "席のご案内ルール"}, {"title": "掃除用具・補充類の置き場を統一"}], "in_progress": [{"title": "トイレ清掃チェックリストの設置"}, {"title": "LINE誘導のタイミング"}, {"title": "ドリンクグラスの構成・配置の見直し"}, {"title": "新人スタッフへの教育法・マニュアル"}, {"title": "サイドワークの見直し"}]}]};
 </script>
 </head>
 <body>
@@ -291,10 +296,15 @@ window.__KAIZEN_DATA__={"meta": {"store": "丸海屋 南三条店", "updated_at"
         html+='<div class="why"><span class="lbl">なぜ</span><p>'+esc(r.why)+'</p></div>';
       }
 
+      /* photos は文字列（"日付/ファイル名"）でも {file, caption} でもよい。
+         キャプションは整理前／整理後のように写真の意味が違うときに使う */
       if(r.photos && r.photos.length){
         html+='<div class="photos'+(r.photos.length>1?' two':'')+'">'
           + r.photos.map(function(p){
-              return '<img src="'+photoSrc(p)+'" alt="'+esc(r.theme)+'" loading="lazy">';
+              var file = (typeof p==='string') ? p : p.file;
+              var cap  = (typeof p==='string') ? '' : (p.caption||'');
+              return '<figure><img src="'+photoSrc(file)+'" alt="'+esc(cap||r.theme)+'" loading="lazy">'
+                + (cap?'<figcaption>'+esc(cap)+'</figcaption>':'') + '</figure>';
             }).join('')
           + '</div>';
       }
