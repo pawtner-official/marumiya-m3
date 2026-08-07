@@ -118,6 +118,21 @@ h1{
   width:6px;height:6px;background:var(--navy);border-radius:50%;
 }
 
+/* 保留中の項目など、グループへの注記 */
+.sgroup-note{
+  margin-top:12px;font-size:14px;line-height:1.75;color:var(--ink-2);
+  background:#f2eee4;border:1px dashed #c4b79c;border-radius:3px;padding:11px 14px;
+}
+
+/* ルールの補足（例: 箸の本数） */
+.rnotes{list-style:none;margin-top:16px}
+.rnotes li{
+  font-size:15.5px;font-weight:500;line-height:1.75;
+  padding:12px 14px 12px 16px;background:#eef2f5;
+  border-left:3px solid var(--navy);border-radius:0 3px 3px 0;
+}
+.rnotes li+li{margin-top:8px}
+
 .items{list-style:none;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
 .items li{
   font-size:14.5px;background:#f1ece0;border:1px solid var(--rule);
@@ -222,7 +237,7 @@ footer{
 }
 </style>
 <script>
-window.__KAIZEN_DATA__={"meta": {"store": "丸海屋 南三条店", "updated_at": "2026-08-06", "latest_round": 3, "contact": {"team": "マーケティングクレドチーム", "members": ["村田", "小林", "濱谷", "佐藤マネージャー"], "alt": "店長"}}, "rules": [{"id": "seating-guide", "theme": "席のご案内", "summary": "個室かテーブルかを最初に聞いて、決まった優先順位でご案内する", "why": "案内するテーブルがスタッフによってバラバラだった。優先順位が決まっているほうが、新人スタッフでも迷いなくご案内できる。", "step_groups": [{"label": "まず聞くこと", "ordered": true, "steps": ["個室かテーブルか、どちらがよいかを聞く"]}, {"label": "個室の場合（人数で優先順位）", "ordered": false, "steps": ["2名 → B5 を優先", "4名 → B2〜B4", "6名 → B1", "空いていれば A1 → A2"]}, {"label": "テーブルの場合", "ordered": false, "steps": ["まずお客様に選んでいただいてOK", "C4・C5 → C1〜C3 → C6〜C8 の順で"]}], "steps": [], "photos": [], "since": "2026-08-05", "status": "確定"}, {"id": "table-setting", "theme": "卓上セッティング", "summary": "全卓このセットに統一する", "why": "以前は卓上に物が置かれているだけの状態で、情報として多すぎた。必要なものだけに間引いて、どの卓も同じ状態に揃えるため。", "steps": ["箸カゴ（緑の布を折って敷く）", "トモエ（醤油）", "爪楊枝", "紙ナプキン", "モバイルオーダーのQRスタンド", "メニュー", "取り皿・小皿"], "photos": ["2026-08-04/6984.jpeg", "2026-08-04/6985.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "washitsu-slipper", "theme": "和室のスリッパ", "summary": "座敷のお客様には、スリッパを出して脱いだ靴は棚に納める", "why": "宴会中にお手洗いなどで席を立つとき、靴を履き直さずにすぐ動けるようにするため。スリッパの方が移動が楽になる。", "steps": [], "photos": ["2026-08-04/6981.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "glass-layout", "theme": "グラスの配置", "summary": "グラスの配置を整理しました。写真の並びを基本の状態とします", "why": "使わないグラスが多く、種類も多すぎて必要なものを取り出しにくかった。作業効率をよくするため。", "steps": [], "photos": [{"file": "2026-08-05/0164.jpeg", "caption": "ドリンクを出す場所：整理前"}, {"file": "2026-08-06/0178.jpeg", "caption": "ドリンクを出す場所：整理後"}, {"file": "2026-08-05/0165.jpeg", "caption": "シンク上の棚：整理前"}, {"file": "2026-08-06/0180.jpeg", "caption": "シンク上の棚：整理後"}, {"file": "2026-08-06/0181.jpeg", "caption": "グラスを種類ごとに並べた状態"}], "since": "2026-08-06", "status": "確定"}, {"id": "cleaning-supplies", "theme": "掃除用具・補充類の置き場", "summary": "掃除用具はトイレ内、補充類はレジに置く", "why": "掃除用具と補充類がトイレ内とレジ周りに混在していて分かりにくかったため、置き場を種類で分けた。", "steps": ["掃除用具 → トイレ内", "補充類（ペーパー・ハンドソープ等） → レジ"], "photos": [{"file": "2026-08-05/0155.jpeg", "caption": "整理前"}, {"file": "2026-08-05/0157.jpeg", "caption": "整理後"}, {"file": "2026-08-05/0156.jpeg", "caption": "トイレ個室内の掃除用具"}], "since": "2026-08-05", "status": "確定"}], "rounds": [{"round": 3, "date": "2026-08-06", "confirmed": [{"title": "グラスの整理"}], "in_progress": [{"title": "ファーストアプローチ（最初の声掛けの流れ）"}, {"title": "トイレチェック"}, {"title": "ドリンクグラスの構成"}, {"title": "新人スタッフへの教育法・マニュアル"}, {"title": "サイドワークの見直し"}]}]};
+window.__KAIZEN_DATA__={"meta": {"store": "丸海屋 南三条店", "updated_at": "2026-08-07", "latest_round": 4, "contact": {"team": "マーケティングクレドチーム", "members": ["村田", "小林", "濱谷", "佐藤マネージャー"], "alt": "店長"}}, "rules": [{"id": "seating-guide", "theme": "席のご案内", "summary": "個室かテーブルかを最初に聞いて、決まった優先順位でご案内する", "why": "案内するテーブルがスタッフによってバラバラだった。優先順位が決まっているほうが、新人スタッフでも迷いなくご案内できる。", "step_groups": [{"label": "まず聞くこと", "ordered": true, "steps": ["個室かテーブルか、どちらがよいかを聞く"]}, {"label": "個室の場合（人数で優先順位）", "ordered": false, "steps": ["2名 → B5 を優先", "4名 → B2〜B4", "6名 → B1", "空いていれば A1 → A2"]}, {"label": "テーブルの場合", "ordered": false, "steps": ["まずお客様に選んでいただいてOK"], "note": "どの順番でご案内するかは、いったん保留になりました。決まり次第このページでお知らせします。"}], "steps": [], "photos": [], "since": "2026-08-05", "status": "確定"}, {"id": "table-setting", "theme": "卓上セッティング", "summary": "全卓このセットに統一する", "why": "以前は卓上に物が置かれているだけの状態で、情報として多すぎた。必要なものだけに間引いて、どの卓も同じ状態に揃えるため。", "steps": ["箸カゴ（緑の布を折って敷く）", "トモエ（醤油）", "爪楊枝", "紙ナプキン", "モバイルオーダーのQRスタンド", "メニュー", "取り皿・小皿"], "notes": ["箸カゴに入れる箸は、その席に座れる人数＋1本。（4名掛けなら5本、6名掛けなら7本）"], "photos": ["2026-08-04/6984.jpeg", "2026-08-04/6985.jpeg"], "since": "2026-08-07", "status": "確定"}, {"id": "washitsu-slipper", "theme": "和室のスリッパ", "summary": "座敷のお客様には、スリッパを出して脱いだ靴は棚に納める", "why": "宴会中にお手洗いなどで席を立つとき、靴を履き直さずにすぐ動けるようにするため。スリッパの方が移動が楽になる。", "steps": [], "photos": ["2026-08-04/6981.jpeg"], "since": "2026-08-04", "status": "確定"}, {"id": "glass-layout", "theme": "グラスの配置", "summary": "グラスの配置を整理しました。写真の並びを基本の状態とします", "why": "使わないグラスが多く、種類も多すぎて必要なものを取り出しにくかった。作業効率をよくするため。", "steps": [], "photos": [{"file": "2026-08-05/0164.jpeg", "caption": "ドリンクを出す場所：整理前"}, {"file": "2026-08-06/0178.jpeg", "caption": "ドリンクを出す場所：整理後"}, {"file": "2026-08-05/0165.jpeg", "caption": "シンク上の棚：整理前"}, {"file": "2026-08-06/0180.jpeg", "caption": "シンク上の棚：整理後"}, {"file": "2026-08-06/0181.jpeg", "caption": "グラスを種類ごとに並べた状態"}], "since": "2026-08-06", "status": "確定"}, {"id": "cleaning-supplies", "theme": "掃除用具・補充類の置き場", "summary": "掃除用具はトイレ内、補充類はレジに置く", "why": "掃除用具と補充類がトイレ内とレジ周りに混在していて分かりにくかったため、置き場を種類で分けた。", "steps": ["掃除用具 → トイレ内", "補充類（ペーパー・ハンドソープ等） → レジ"], "photos": [{"file": "2026-08-05/0155.jpeg", "caption": "整理前"}, {"file": "2026-08-05/0157.jpeg", "caption": "整理後"}, {"file": "2026-08-05/0156.jpeg", "caption": "トイレ個室内の掃除用具"}], "since": "2026-08-05", "status": "確定"}], "rounds": [{"round": 4, "date": "2026-08-07", "confirmed": [{"title": "箸カゴに入れる箸の本数を決定"}, {"title": "テーブル席のご案内順を、いったん保留に"}], "in_progress": [{"title": "テーブル席をご案内する順番"}, {"title": "ファーストアプローチ（最初の声掛けの流れ）"}, {"title": "トイレチェック"}, {"title": "ドリンクグラスの構成"}, {"title": "新人スタッフへの教育法・マニュアル"}, {"title": "サイドワークの見直し"}]}]};
 </script>
 </head>
 <body>
@@ -285,10 +300,16 @@ window.__KAIZEN_DATA__={"meta": {"store": "丸海屋 南三条店", "updated_at"
           return '<div class="sgroup">'
             +(g.label?'<div class="sgroup-h">'+esc(g.label)+'</div>':'')
             +(g.ordered ? '<ol class="steps">'+li+'</ol>' : '<ul class="plainsteps">'+li+'</ul>')
+            +(g.note?'<div class="sgroup-note">'+esc(g.note)+'</div>':'')
             +'</div>';
         }).join('');
       } else if(r.steps && r.steps.length){
         html += '<ul class="items">'+r.steps.map(function(s){return '<li>'+esc(s)+'</li>'}).join('')+'</ul>';
+      }
+
+      /* notes … ルールに対する補足（例: 箸の本数）。タグや手順に収まらない条件を書く */
+      if(r.notes && r.notes.length){
+        html += '<ul class="rnotes">'+r.notes.map(function(n){return '<li>'+esc(n)+'</li>'}).join('')+'</ul>';
       }
 
       /* なぜ ── 空のときは欄そのものを出さない（推測で埋めない） */
