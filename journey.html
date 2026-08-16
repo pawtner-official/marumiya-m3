@@ -135,6 +135,9 @@ details.rest[open] summary::before{content:'▾ '}
 footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--rule);
   font-size:12.5px;color:var(--ink-3);line-height:1.9}
 footer a{color:var(--navy);font-weight:700}
+.split{margin-top:14px;padding:13px 15px;background:#f3eee2;border-left:3px solid var(--amber);
+  border-radius:0 3px 3px 0;font-size:12.5px;line-height:1.85;color:var(--ink-2)}
+.split b{display:block;color:var(--navy);font-size:13px;margin-bottom:5px}
 .conn{position:fixed;left:0;right:0;bottom:0;background:var(--vermil);color:#fff;
   font-size:12.5px;text-align:center;padding:9px;z-index:150;display:none}
 </style>
@@ -319,7 +322,13 @@ fetch('journey.json',{cache:'no-store'}).then(r=>r.json()).then(D=>{
     <p class="warn">${esc(D.meta.action_note)}</p>
     <p>出典：${D.meta.sources.map(esc).join(' ／ ')}</p></details>`;
   $('#foot').innerHTML = `チェックとメモはメンバー全員で共有されます。誰かが入れると、他の人の画面にも反映されます。
-    <br>改善の記録はこちら → <a href="member.html">改善の記録（第1〜5回）</a>`;
+    <br>改善の記録はこちら → <a href="member.html">改善の記録（第1〜5回）</a>
+    <div class="split"><b>旧「改善チェックリスト」との使い分け</b>
+      接客・オペレーションの項目は<u>このページで管理します</u>。旧ページの同じ項目は触らないでください
+      （項目IDが別なので、両方でチェックするとズレます）。<br>
+      料理・メニュー企画・設備投資の項目は旧ページにしかありません。そちらで続けてください。<br>
+      → <a href="https://pawtner-official.github.io/marumiya-kaizen-checklist/" target="_blank" rel="noopener">改善チェックリスト（料理・メニュー・設備）を開く</a>
+    </div>`;
   renderWho();
   render();
   onSnapshot(REF, snap=>{
