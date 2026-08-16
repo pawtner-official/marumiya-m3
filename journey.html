@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>カスタマージャーニー チェックリスト｜丸海屋 南三条店</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f5f0;--paper-2:#fffdf9;
+  --ink:#1f2328;--ink-2:#4a5158;--ink-3:#8a8f95;
+  --navy:#1b3b58;--vermil:#b93f2b;--amber:#a8792a;--sage:#4f7a63;
+  --rule:#e2dbcf;--rule-2:#eee8dc;
+  --gothic:'Noto Sans JP','Hiragino Sans',sans-serif;
+  --mincho:'Zen Old Mincho','Hiragino Mincho ProN',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font-family:var(--gothic);
+  font-size:15px;line-height:1.8;font-feature-settings:"palt" 1;
+  padding:0 clamp(12px,3.5vw,26px) 90px}
+.wrap{max-width:880px;margin:0 auto}
+
+header{padding:clamp(22px,5vw,40px) 0 0}
+.tag{display:inline-block;font-size:11px;letter-spacing:.14em;color:#fff;
+  background:var(--navy);border-radius:2px;padding:4px 10px}
+h1{font-family:var(--mincho);font-weight:600;font-size:clamp(23px,5.4vw,36px);
+  line-height:1.3;letter-spacing:.04em;color:var(--navy);margin-top:11px}
+.sub{margin-top:8px;font-size:12px;color:var(--ink-3);line-height:1.75}
+.hr{height:2px;background:var(--navy);margin-top:18px}
+
+/* 一周の進捗 */
+.lap{margin-top:20px;background:var(--navy);color:#e7dcc6;border-radius:4px;
+  padding:18px clamp(14px,3.5vw,22px)}
+.lap .h{font-size:12px;letter-spacing:.14em;color:#a9bccd}
+.lap .big{font-family:var(--mincho);font-size:30px;color:#fff;line-height:1.2;margin-top:5px}
+.lap .big small{font-size:15px;color:#a9bccd;margin-left:4px}
+.bar{margin-top:12px;height:8px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:#e7a44a;border-radius:99px;transition:width .4s}
+.lap .dots{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
+.lap .dots span{font-size:11px;padding:3px 8px;border-radius:2px;
+  background:rgba(255,255,255,.12);color:#c3cedb}
+.lap .dots span.ok{background:#e7a44a;color:#22364a;font-weight:700}
+
+/* 進め方 */
+details.policy{margin-top:14px;background:var(--paper-2);border:1px solid var(--rule);
+  border-radius:4px;padding:13px 16px}
+details.policy summary{font-size:13px;font-weight:700;color:var(--navy);cursor:pointer;list-style:none}
+details.policy summary::-webkit-details-marker{display:none}
+details.policy summary::before{content:'▸ ';color:var(--ink-3)}
+details.policy[open] summary::before{content:'▾ '}
+details.policy p{margin-top:10px;font-size:13px;line-height:1.85;color:var(--ink-2)}
+details.policy p.warn{color:var(--vermil)}
+
+/* 名前 */
+.who{margin-top:14px;font-size:12.5px;color:var(--ink-3)}
+.who b{color:var(--navy)}
+.who button{background:none;border:none;color:var(--ink-3);font-family:inherit;
+  font-size:12px;text-decoration:underline;cursor:pointer;padding:0 4px}
+.gate{position:fixed;inset:0;z-index:200;background:rgba(20,24,30,.86);
+  display:flex;align-items:center;justify-content:center;padding:20px}
+.gate .box{background:var(--paper-2);border-radius:6px;padding:26px 24px;max-width:340px;width:100%}
+.gate h2{font-family:var(--mincho);font-size:19px;color:var(--navy)}
+.gate p{margin-top:8px;font-size:13px;color:var(--ink-2);line-height:1.8}
+.gate input{width:100%;margin-top:14px;padding:11px 12px;font-family:inherit;font-size:16px;
+  border:1px solid var(--rule);border-radius:3px;outline:none}
+.gate input:focus{border-color:var(--navy)}
+.gate button{width:100%;margin-top:12px;padding:12px;background:var(--navy);color:#fff;
+  border:none;border-radius:3px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer}
+
+/* フェーズ */
+.phase{margin-top:22px;background:var(--paper-2);border:1px solid var(--rule);border-radius:4px}
+.phase.cleared{border-color:#bcd2c6}
+.ph-h{padding:14px clamp(13px,3vw,20px);border-bottom:1px solid var(--rule);
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.ph-h .no{font-family:var(--mincho);font-size:20px;color:var(--vermil);flex-shrink:0}
+.ph-h .nm{font-size:16px;font-weight:700;color:var(--navy)}
+.ph-h .st{margin-left:auto;font-size:11px;color:var(--ink-3)}
+.phase.cleared .ph-h .st{color:var(--sage);font-weight:700}
+.ph-b{padding:6px clamp(13px,3vw,20px) 14px}
+
+/* 項目 */
+.it{padding:13px 0;border-bottom:1px solid var(--rule-2)}
+.it:last-child{border-bottom:none}
+.it.pri{background:#fdf6e8;margin:0 -10px;padding:14px 12px;border-left:3px solid var(--amber);
+  border-bottom:none;border-radius:0 3px 3px 0}
+.it.pri+.it{border-top:1px solid var(--rule-2)}
+.row{display:flex;gap:11px;align-items:flex-start}
+.cb{flex-shrink:0;width:26px;height:26px;border:2px solid var(--ink-3);border-radius:4px;
+  background:#fff;cursor:pointer;position:relative;margin-top:1px;padding:0;
+  -webkit-tap-highlight-color:transparent}
+.cb.on{background:var(--sage);border-color:var(--sage)}
+.cb.fixed{cursor:default;background:var(--sage);border-color:var(--sage);opacity:.75}
+.cb.on::after{content:'';position:absolute;left:8px;top:3px;width:6px;height:12px;
+  border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+.main{flex:1;min-width:0}
+.ttl{font-size:15px;line-height:1.6;font-weight:500}
+.it.pri .ttl{font-size:16px}
+.it.on .ttl{color:var(--ink-3);text-decoration:line-through}
+.badges{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bg{font-size:10.5px;font-weight:700;letter-spacing:.06em;border-radius:2px;padding:2px 7px}
+.b-done{background:#e2eee8;color:var(--sage)}
+.b-running{background:#e6ecf2;color:var(--navy)}
+.b-holding{background:#f6e3de;color:var(--vermil)}
+.b-todo{background:#f5ecd8;color:var(--amber)}
+.b-none{background:#eeeae2;color:var(--ink-3)}
+.b-pri{background:var(--amber);color:#fff}
+.src{font-size:10.5px;color:var(--ink-3);border:1px solid var(--rule);border-radius:2px;padding:1px 6px}
+.act{margin-top:9px;font-size:13.5px;line-height:1.75;color:var(--ink);
+  background:#eef2f5;border-left:3px solid var(--navy);border-radius:0 3px 3px 0;padding:9px 12px}
+.act b{display:block;font-size:10.5px;letter-spacing:.1em;color:var(--navy);margin-bottom:3px}
+.nt{margin-top:7px;font-size:12.5px;line-height:1.75;color:var(--ink-2)}
+.by{margin-top:7px;font-size:11.5px;color:var(--sage)}
+
+/* メモ */
+.memo{margin-top:9px}
+.memo textarea{width:100%;min-height:38px;padding:9px 11px;font-family:inherit;font-size:14px;
+  line-height:1.7;border:1px solid var(--rule);border-radius:3px;background:#fff;
+  resize:vertical;outline:none}
+.memo textarea:focus{border-color:var(--navy)}
+.memo textarea::placeholder{color:#b9b6ae}
+.memo .who2{margin-top:4px;font-size:11px;color:var(--ink-3)}
+
+/* その他の項目 */
+details.rest{margin-top:6px}
+details.rest summary{font-size:12.5px;color:var(--navy);cursor:pointer;padding:9px 0;
+  list-style:none;font-weight:700}
+details.rest summary::-webkit-details-marker{display:none}
+details.rest summary::before{content:'▸ ';color:var(--ink-3)}
+details.rest[open] summary::before{content:'▾ '}
+
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--rule);
+  font-size:12.5px;color:var(--ink-3);line-height:1.9}
+footer a{color:var(--navy);font-weight:700}
+.conn{position:fixed;left:0;right:0;bottom:0;background:var(--vermil);color:#fff;
+  font-size:12.5px;text-align:center;padding:9px;z-index:150;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="tag">メンバー用・スタッフには共有しない</span>
+    <h1>カスタマージャーニー チェックリスト</h1>
+    <div class="sub" id="sub"></div>
+    <div class="hr"></div>
+  </header>
+
+  <div id="lap"></div>
+  <div id="policy"></div>
+  <div class="who" id="who"></div>
+  <div id="phases"></div>
+  <footer id="foot"></footer>
+</div>
+<div class="conn" id="conn">接続が切れています。チェックが保存されていない可能性があります</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, doc, onSnapshot, setDoc, serverTimestamp }
+  from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* 既存の改善チェックリストと同じプロジェクト。ドキュメントだけ分けている */
+const firebaseConfig = {
+  apiKey: "AIzaSyC8X50o4QfCCj79ey_l-u-X4LNVsCF0k-w",
+  authDomain: "pawtner-checklists.firebaseapp.com",
+  projectId: "pawtner-checklists",
+  storageBucket: "pawtner-checklists.firebasestorage.app",
+  messagingSenderId: "807550436635",
+  appId: "1:807550436635:web:62c26be86b02da4ddbbfbe"
+};
+const db = getFirestore(initializeApp(firebaseConfig));
+/* 新規ドキュメントの作成はFirestoreのルールで拒否される（PERMISSION_DENIED）。
+   既存の改善チェックリストと同じドキュメントを使い、項目IDで住み分ける。
+   旧ページは自分の項目IDだけを描画するので、IDを足しても壊れない。 */
+const REF = doc(db, "checklists", "marumiya-minami3-kaizen-202607");
+
+const $ = s => document.querySelector(s);
+/* 完了の判定。status==='done' はデータ側で確定済み（接客ページや既存チェックリストで決着）。
+   それ以外はこのページのチェックで管理する。 */
+const isDone = it => it.status==='done' || !!(state[it.id]||{}).checked;
+const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+let DATA = null;
+let state = {};            // {itemId:{checked,by,at,note,noteBy,noteAt}}
+let me = localStorage.getItem('mjName') || '';
+
+/* ── 名前 ── */
+function askName(force){
+  if(me && !force) return;
+  const g = document.createElement('div');
+  g.className = 'gate';
+  g.innerHTML = `<div class="box"><h2>お名前を教えてください</h2>
+    <p>誰がチェックしたか・誰のメモかが分かるようにするためです。</p>
+    <input id="nm" maxlength="12" placeholder="例：村田" value="${esc(me)}">
+    <button id="ok">はじめる</button></div>`;
+  document.body.appendChild(g);
+  const input = g.querySelector('#nm');
+  const done = () => {
+    const v = input.value.trim();
+    if(!v) { input.focus(); return; }
+    me = v; localStorage.setItem('mjName', v); g.remove(); renderWho();
+  };
+  g.querySelector('#ok').onclick = done;
+  input.onkeydown = e => { if(e.key === 'Enter') done(); };
+  setTimeout(()=>input.focus(), 60);
+}
+function renderWho(){
+  $('#who').innerHTML = me
+    ? `記録者：<b>${esc(me)}</b><button id="chg">変更</button>`
+    : '';
+  const b = $('#chg'); if(b) b.onclick = () => askName(true);
+}
+
+/* ── 保存 ── */
+async function save(id, patch){
+  const cur = state[id] || {};
+  state[id] = Object.assign({}, cur, patch);
+  render();                                   // 先に画面へ反映
+  try{
+    await setDoc(REF, { items: { [id]: Object.assign({}, cur, patch, { at: serverTimestamp() }) },
+                        updatedAt: serverTimestamp() }, { merge:true });
+    $('#conn').style.display = 'none';
+  }catch(e){
+    $('#conn').style.display = 'block';
+  }
+}
+
+/* ── 描画 ── */
+function itemHTML(it, ST){
+  const s = state[it.id] || {};
+  const on = isDone(it);
+  const fixed = it.status==='done';
+  const pri = it.priority === 1;
+  return `<div class="it${pri?' pri':''}${on?' on':''}" data-id="${it.id}">
+    <div class="row">
+      <button class="cb${on?' on':''}${fixed?' fixed':''}"${fixed?'':' data-act="check"'} data-id="${it.id}" aria-label="チェック"></button>
+      <div class="main">
+        <div class="ttl">${esc(it.text)}</div>
+        <div class="badges">
+          ${pri?'<span class="bg b-pri">第1優先</span>':''}
+          ${it.priority===2?'<span class="bg b-todo">次点</span>':''}
+          <span class="bg b-${it.status}">${ST[it.status].label}</span>
+          ${it.rule?`<span class="src">確定ルール「${esc(it.rule)}」</span>`:''}
+          ${it.src?`<span class="src">${esc(it.src)}</span>`:''}
+        </div>
+        ${it.action?`<div class="act"><b>打ち手（案）</b>${esc(it.action)}</div>`:''}
+        ${it.note?`<div class="nt">${esc(it.note)}</div>`:''}
+        ${on&&s.by?`<div class="by">✓ ${esc(s.by)} が完了にしました</div>`:''}
+        <div class="memo">
+          <textarea data-act="memo" data-id="${it.id}" rows="1"
+            placeholder="メモ（決めたこと・気づいたこと）">${esc(s.note||'')}</textarea>
+          ${s.note&&s.noteBy?`<div class="who2">最終更新：${esc(s.noteBy)}</div>`:''}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function render(){
+  if(!DATA) return;
+  const ST = DATA.statuses;
+  const phases = DATA.phases;
+
+  /* 一周の進捗＝各フェーズの第1優先が完了した数 */
+  const laps = phases.map(p=>{
+    const pri = p.items.find(i=>i.priority===1);
+    return { no:p.no, ok: pri ? isDone(pri) : p.items.every(isDone) };
+  });
+  const okN = laps.filter(l=>l.ok).length;
+  $('#lap').innerHTML = `<div class="lap">
+    <div class="h">一周の進捗（各フェーズの第1優先）</div>
+    <div class="big">${okN}<small>/ ${laps.length} フェーズ</small></div>
+    <div class="bar"><i style="width:${Math.round(okN/laps.length*100)}%"></i></div>
+    <div class="dots">${laps.map(l=>`<span class="${l.ok?'ok':''}">${esc(l.no)}</span>`).join('')}</div>
+  </div>`;
+
+  $('#phases').innerHTML = phases.map(p=>{
+    const pri  = p.items.filter(i=>i.priority===1);
+    const rest = p.items.filter(i=>i.priority!==1);
+    const doneN = p.items.filter(isDone).length;
+    const cleared = pri.length ? pri.every(isDone) : p.items.every(isDone);
+    return `<div class="phase${cleared?' cleared':''}">
+      <div class="ph-h"><span class="no">${esc(p.no)}</span>
+        <span class="nm">${esc(p.name)}</span>
+        <span class="st">${cleared?(pri.length?'第1優先 完了':'このフェーズは完了'):`${doneN} / ${p.items.length} 完了`}</span></div>
+      <div class="ph-b">
+        ${pri.map(i=>itemHTML(i,ST)).join('')}
+        ${rest.length?`<details class="rest"><summary>その他の項目（${rest.length}）</summary>
+          ${rest.map(i=>itemHTML(i,ST)).join('')}</details>`:''}
+      </div></div>`;
+  }).join('');
+}
+
+/* ── イベント（描画で作り直すので委譲） ── */
+document.addEventListener('click', e=>{
+  const b = e.target.closest('[data-act="check"]');
+  if(!b) return;
+  if(!me){ askName(); return; }
+  const id = b.dataset.id, cur = !!(state[id]||{}).checked;
+  save(id, { checked: !cur, by: !cur ? me : '' });
+});
+document.addEventListener('focusout', e=>{
+  const t = e.target.closest('[data-act="memo"]');
+  if(!t) return;
+  const id = t.dataset.id, v = t.value.trim();
+  if(v === ((state[id]||{}).note||'')) return;
+  if(!me){ askName(); return; }
+  save(id, { note: v, noteBy: me });
+});
+
+/* ── 起動 ── */
+fetch('journey.json',{cache:'no-store'}).then(r=>r.json()).then(D=>{
+  DATA = D;
+  $('#sub').textContent = `${D.meta.store}　最終更新 ${D.meta.updated_at}`;
+  $('#policy').innerHTML = `<details class="policy"><summary>進め方と、この表の読み方</summary>
+    <p>${esc(D.meta.policy)}</p>
+    <p class="warn">${esc(D.meta.action_note)}</p>
+    <p>出典：${D.meta.sources.map(esc).join(' ／ ')}</p></details>`;
+  $('#foot').innerHTML = `チェックとメモはメンバー全員で共有されます。誰かが入れると、他の人の画面にも反映されます。
+    <br>改善の記録はこちら → <a href="member.html">改善の記録（第1〜5回）</a>`;
+  renderWho();
+  render();
+  onSnapshot(REF, snap=>{
+    state = (snap.data() || {}).items || {};
+    $('#conn').style.display = 'none';
+    render();
+  }, ()=>{ $('#conn').style.display = 'block'; });
+  if(!me) askName();
+}).catch(e=>{
+  $('#phases').innerHTML = `<p style="padding:30px">journey.json を読み込めませんでした（${esc(e.message)}）</p>`;
+});
+</script>
+</body>
+</html>
