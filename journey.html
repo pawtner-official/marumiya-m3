@@ -108,6 +108,7 @@ details.policy p.warn{color:var(--vermil)}
 .b-todo{background:#f5ecd8;color:var(--amber)}
 .b-none{background:#eeeae2;color:var(--ink-3)}
 .b-pri{background:var(--amber);color:#fff}
+.b-lap{background:#dbe8e0;color:var(--sage)}
 .src{font-size:10.5px;color:var(--ink-3);border:1px solid var(--rule);border-radius:2px;padding:1px 6px}
 .act{margin-top:9px;font-size:13.5px;line-height:1.75;color:var(--ink);
   background:#eef2f5;border-left:3px solid var(--navy);border-radius:0 3px 3px 0;padding:9px 12px}
@@ -244,6 +245,7 @@ function itemHTML(it, ST){
         <div class="badges">
           ${pri?'<span class="bg b-pri">第1優先</span>':''}
           ${it.priority===2?'<span class="bg b-todo">次点</span>':''}
+          ${it.lap===1?'<span class="bg b-lap">1周目クリア</span>':''}
           <span class="bg b-${it.status}">${ST[it.status].label}</span>
           ${it.rule?`<span class="src">確定ルール「${esc(it.rule)}」</span>`:''}
           ${it.src?`<span class="src">${esc(it.src)}</span>`:''}
@@ -268,8 +270,9 @@ function render(){
 
   /* 一周の進捗＝各フェーズの第1優先が完了した数 */
   const laps = phases.map(p=>{
-    const pri = p.items.find(i=>i.priority===1);
-    return { no:p.no, ok: pri ? isDone(pri) : p.items.every(isDone) };
+    /* 一周のクリア＝1周目の第1優先(lap=1)が完了、または全項目完了 */
+    const lap1 = p.items.filter(i=>i.lap===1);
+    return { no:p.no, ok: lap1.length ? lap1.every(isDone) : p.items.every(isDone) };
   });
   const okN = laps.filter(l=>l.ok).length;
   $('#lap').innerHTML = `<div class="lap">
@@ -283,11 +286,12 @@ function render(){
     const pri  = p.items.filter(i=>i.priority===1);
     const rest = p.items.filter(i=>i.priority!==1);
     const doneN = p.items.filter(isDone).length;
-    const cleared = pri.length ? pri.every(isDone) : p.items.every(isDone);
+    const lap1 = p.items.filter(i=>i.lap===1);
+    const cleared = lap1.length ? lap1.every(isDone) : p.items.every(isDone);
     return `<div class="phase${cleared?' cleared':''}">
       <div class="ph-h"><span class="no">${esc(p.no)}</span>
         <span class="nm">${esc(p.name)}</span>
-        <span class="st">${cleared?(pri.length?'第1優先 完了':'このフェーズは完了'):`${doneN} / ${p.items.length} 完了`}</span></div>
+        <span class="st">${cleared?(p.items.every(isDone)?'このフェーズは完了':'1周目クリア'):`${doneN} / ${p.items.length} 完了`}</span></div>
       <div class="ph-b">
         ${pri.map(i=>itemHTML(i,ST)).join('')}
         ${rest.length?`<details class="rest"><summary>その他の項目（${rest.length}）</summary>
